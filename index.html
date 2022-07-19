@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css" integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+     <script>
+          tailwind.config = {
+               theme : {
+                    fontFamily : {
+                         fontawsome : ['"Font Awesome 6 Free"'] ,
+                    } , 
+                    screens : {
+                         sm : '100px' , 
+                    } ,
+                    extend : {
+                         spacing : {
+                         'lefttab' : '8rem'  , 
+                         } , 
+                         gridTemplateColumns : {
+                              'column' : '1fr 3fr' , 
+                              '4col' : '4fr 1fr' , 
+                         } ,
+                         gridTemplateRows : {
+                              'rows' : '1fr 2fr' , 
+                         } ,
+                         colors : {
+                              bgNav : '#0d2238' ,
+                              fosforygreen : '#1dee96' ,
+                         } ,
+                         content : {
+                              'explore' : '"\\f14e"' , 
+                              'medal' : '"\\f5a2"' , 
+                              'star' : '"\\f005"' , 
+                              'folder' : '"\\f07b"' ,
+                              'bell' : '"\\f0f3"' , 
+                              'gear' : '"\\f013"' ,
+                              'search' : '"\\f002"' ,
+                              'heart' : '"\\f004"' , 
+                              'arrowdown' : '"\\f107"' , 
+                         } , 
+                    }
+               }
+          }
+     </script>
+     <style type="text/tailwindcss">
+          @layer utilities {
+            .content-auto {
+              content-visibility: auto;
+            }
+          }
+      </style>
+</head>
+<body class="absolute w-full h-full left-0 top-0 p-4 bg-gray-300">
+     <main class="relative h-full bg-gray-100 rounded-2xl flex overflow-x-hidden ">
+          <div class="left w-lefttab h-full flex flex-col items-center bg-white">
+               <div class="logo">
+                    <img src="./podcast.png" alt="" srcset="">
+               </div>
+               <div class="tab__list flex flex-col items-center gap-4 mt-16">
+                    <a class="nav after:block after:content-explore after:font-fontawsome after:flex after:items-center after:justify-center  flex items-center justify-center rounded-xl px-3 py-2 after:transation-all after:duration-300 
+                    text-white bg-bgNav after:font-black after:text-xl after:scale-110"></a>
+                    <a class="nav after:font-fontawsome after:font-black 
+                    after:content-medal after:flex after:items-center 
+                    after:justify-center  text-lg flex items-center 
+                    justify-center rounded-xl px-3 py-2 after:transation-all 
+                    after:duration-300 transation-all duration-300 
+                    ease-in text-gray-600 hover:bg-gray-200 bg-transparent"></a>
+                    <a class="nav after:font-fontawsome after:content-star 
+                    after:font-normal after:flex after:items-center after:justify-center 
+                    text-lg flex items-center justify-center rounded-xl px-3 py-2 
+                    after:transation-all after:duration-300 
+                    text-gray-600 transation-all duration-300 ease-in text-gray-600 
+                    hover:bg-gray-200 bg-transparent"></a>
+                    <a class="nav after:font-fontawsome after:content-folder after:font-normal
+                    after:flex after:items-center after:justify-center  text-lg flex items-center 
+                    justify-center rounded-xl px-3 py-2 after:transation-all after:duration-300 
+                    text-gray-600 transation-all duration-300 ease-in text-gray-600 
+                    hover:bg-gray-200 bg-transparent"></a>
+                    <a class="nav after:font-fontawsome after:content-bell after:font-normal 
+                    after:flex after:items-center after:justify-center  text-lg flex items-center 
+                    justify-center rounded-xl px-3 py-2 after:transation-all after:duration-300 
+                    text-gray-600 transation-all duration-300 ease-in text-gray-600 hover:bg-gray-200 
+                    bg-transparent"></a>
+                    <a class="nav after:font-fontawsome after:content-gear after:font-black 
+                    after:flex after:items-center after:justify-center  text-lg flex items-center
+                    justify-center rounded-xl px-3 py-2 after:transation-all after:duration-300 
+                    text-gray-600 transation-all duration-300 ease-in text-gray-600 hover:bg-gray-200 
+                    bg-transparent"></a>
+               </div>
+          </div>
+          <div class="right flex flex-col items-start w-full h-full p-6 gap-4">
+               <div class="header flex flex-row justify-between items-center w-full h-12">
+                    <div class="flex flex-row items-center gap-4 before:font-fontawsome before:table before:clear-both before:font-black before:content-search before:text-lg bg-white py-2 px-4 rounded-2xl h-full">
+                         <form action="" name="search">
+                              <input type="search" name="search" id="search" placeholder="Search something..." class="focus:border-none focus:outline-none focus:ring-0 border-none outline-none w-full p-0">
+                         </form>
+                    </div>
+                    <div class="flex flex-row items-center gap-4 h-full">
+                         <div class="flex flex-row items-center gap-2 h-full">
+                              <div class="heart before:font-fontawsome before:font-normal before:table before:clear-both before:content-heart before:text-xl h-full flex flex-row justify-center items-center w-12 rounded-2xl bg-white before:text-bgNav"></div>
+                              <div class="bell before:font-fontawsome before:font-normal before:table before:clear-both before:content-bell before:text-xl h-full flex flex-row justify-center items-center w-12 rounded-2xl bg-white before:text-bgNav"></div>
+                         </div>
+                         <div class="flex flex-row items-center gap-4 after:font-fontawsome after:font-black after:content-arrowdown 
+                         after:table after:clear-both">
+                              <div class="flex flex-row items-center justify-center h-12 w-12 bg-bgNav 
+                              rounded-full after:table after:content-['_'] after:absolute
+                              after:bg-fosforygreen after:p-1.5 relative after:rounded-full after:top-0 after:right-0">
+                                   <img src="./avatar.png" alt="" class="rounded-full overflow-hidden">
+                              </div>
+                              <div class="flex flex-col items-start justify-evenly ">
+                                   <p>
+                                        Sed Amir 
+                                   </p>
+                                   <p title="amir.akbrzadh3@gmial.com">
+                                        amir.akb...
+                                   </p>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="main__wrapper grid grid-cols-4col w-full h-full gap-4">
+                    <div class="grid grid-rows-rows">
+                         <div class="top grid grid-cols-column">
+                              <div class="p-4">
+                                   <h2 class="text-xl">
+                                        Trending this week
+                                   </h2>
+                                   <div class="cover">
+                                        
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="wrapper__right">
+
+                    </div>
+               </div>
+          </div>
+     </main>
+</body>
+</html>
