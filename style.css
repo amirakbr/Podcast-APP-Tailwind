@@ -86,4 +86,12 @@ input[type=range] {
    input[type=range]:focus::-ms-fill-upper {
      background: #0D2238;
    }
-   
+   .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    opacity: .55 !important;
+   }
+   .swiper-button-disabled {
+    opacity: .55 !important;
+   }
+   *,*::after,*::before {
+    transition: all .5s ease-in-out !important;
+   }
