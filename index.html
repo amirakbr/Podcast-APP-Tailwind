@@ -22,15 +22,16 @@
                          fontawsome : ['"Font Awesome 6 Free"'] ,
                     } , 
                     screens: {
+                         'phone' : '450px' , 
+                         'largephone' : '620px' , 
                          'tablet': '640px',
-                         'laptop': '2025px',
-                         'laptop1': '1803px',
-                         'laptop2' : '1610px' , 
-                         'laptop3' : '1500px' , 
-                         'laptop4' : '1100px' , 
-                         'tablet' : '960px' , 
                          'fablet' : '770px' , 
-                         'largephone' : '594px' , 
+                         'tablet' : '960px' , 
+                         'laptop4' : '1070px' , 
+                         'laptop3' : '1500px' , 
+                         'laptop2' : '1610px' , 
+                         'laptop1': '1803px',
+                         'laptop': '2025px',
                     },   
                     extend : {
                          spacing : {
@@ -47,6 +48,8 @@
                          'hplaylist' : '13rem' ,      
                          '50%' : '50%'  ,
                          'auto' : 'auto' , 
+                         'hamburger' : '2.5rem' , 
+                         'halfhamburger' : '1.25rem' , 
                          } , 
                          gridTemplateColumns : {
                               'column' : '1fr 3fr' , 
@@ -71,6 +74,7 @@
                               bgNav : '#052e59' ,
                               fosforygreen : '#1dee96' ,
                               lightblue : '#e5f8fc' , 
+                              backdrop : '#00000061' , 
                          } ,
                          content : {
                               'explore' : '"\\f14e"' , 
@@ -123,13 +127,13 @@
           }
       </style>
 </head>
-<body class="w-full h-full left-0 top-0 p-6 bg-gray-300 flex flex-row justify-center items-center">
-     <main class="relative max-w-[2000px] h-full bg-gray-100 rounded-2xl flex overflow-x-hidden">
-          <div class="left w-lefttab h-auto flex flex-col items-center bg-white">
-               <div class="logo">
+<body class="w-full h-full left-0 top-0 p-0 phone:p-6 bg-gray-300 flex flex-row justify-center items-center">
+     <main class="relative w-full phone:max-w-[2000px] h-full bg-gray-100 phone:rounded-2xl flex flex-col phone:flex-row overflow-x-hidden">
+          <div class="translate-x-[-100%] phone:translate-x-[0%] fixed mt-[4rem] phone:relative z-10 left-0 w-lefttab h-full phone:h-auto flex flex-col items-center bg-white lefttabb">
+               <div class="logo hidden phone:block">
                     <img src="./podcast.png" alt="" srcset="">
                </div>
-               <div class="tab__list flex flex-col items-center gap-4 mt-16">
+               <div class="tab__list flex flex-col items-center gap-4 mt-4 phone:mt-16">
                     <a class="w-iconsize h-iconsize nav after:block after:content-explore after:font-fontawsome 
                     after:flex after:items-center after:justify-center  flex items-center 
                     justify-center rounded-xl px-3 py-2 after:transation-all after:duration-300 
@@ -184,7 +188,19 @@
                     -->
                </div>
           </div>
-          <div class="right flex flex-col items-start w-full h-full p-6 px-8 gap-6">
+          <div class="fixed top-0 m-0 phone:hidden flex flex-row items-center justify-between px-4 h-[4rem] w-full z-20 bg-white">
+               <div class="hamburgrmenu relative w-[3.5rem] h-[3.5rem] bg-gray-100 rounded ml-[0.75rem] ">
+                    <div class="absolute left-0 top-0 flex flex-col items-center h-hamburger w-hamburger mt-[0.5rem] ml-[.5rem]">
+                         <span class="absolute top-0 w-[2.5rem] h-1 bg-gray-500"></span>
+                         <span class="absolute top-halfhamburger w-[2.5rem] translate-y-[-50%] h-1 bg-gray-500"></span>
+                         <span class="absolute bottom-0 w-[2.5rem] h-1 bg-gray-500"></span>
+                    </div>
+               </div>
+               <div class="logo h-20">
+                    <img class="h-full" src="./podcast.png" alt="" srcset="">
+               </div>
+          </div>
+          <div class="right flex flex-col items-start w-full h-full p-6 px-8 gap-6 relative phone:mt-0 mt-[3rem]">
                <div class="header hidden fablet:flex flex-row justify-between items-center w-full h-12">
                     <div class="flex flex-row items-center gap-4 before:font-fontawsome before:table before:clear-both before:font-black before:content-search before:text-lg bg-white py-2 px-4 rounded-2xl h-full">
                          <form action="" name="search">
@@ -215,25 +231,25 @@
                     </div>
                </div> 
                <div class="flex flex-col w-full gap-8">
-                    <h1 class="text-xl font-semibold">DISCOVER PODCAST</h1>
-                    <div class="grid grid-cols-1col laptop3:grid-cols-2cols laptop2:grid-cols-25col laptop1:grid-cols-3col laptop:grid-cols-4col gap-12">
+                    <h1 class="text-lg largephone:text-xl text-center largephone:text-left font-semibold">DISCOVER PODCAST</h1>
+                    <div class="grid grid-cols-1col laptop:grid-cols-4col laptop3:grid-cols-2cols laptop2:grid-cols-25col laptop1:grid-cols-3col gap-12">
                          <div class="grid grid-rows-rows gap-8">
                               <div class="grid grid-cols-1col laptop4:grid-cols-3cols laptop:grid-cols-column gap-6">
                                    <div class="flex flex-col items-start bg-white p-6 rounded-2xl gap-4">
                                         <div class="flex items-center w-full justify-center largephone:justify-start gap-6">
-                                             <h2 class="h-10 flex flex-row items-center text-lg font-semibold">
+                                             <h2 class="h-10 flex flex-row items-center text-lg largephone:text-xl text-center largephone:text-left font-semibold">
                                                   Trending podcast in
                                              </h2>
                                         </div>
                                         <div class="cover w-full h-10r laptop4:h-full rounded-2xl overflow-hidden relative">
                                              <img src="./podcastimg0.avif" alt="" class="h-full w-full object-cover object-right">
-                                             <p class="absolute top-2 right-2 p-0.5 bg-white text-bgNav font-semibold rounded">50:00 min</p>
-                                             <div class="flex items-center justify-between w-full p-2 after:font-fontawsome after:font-black after:content-singleplay absolute bottom-0 left-0 after:text-bgNav after:w-10 after:h-10 after:bg-white after:flex after:justify-center after:items-center after:rounded-full ">
+                                             <p class="text-xs largephone:text-sm absolute top-2 right-2 p-0.5 bg-white text-bgNav font-semibold rounded">50:00 min</p>
+                                             <div class="flex items-center justify-between w-full p-2 after:font-fontawsome after:font-black after:content-singleplay absolute bottom-0 left-0 after:text-bgNav after:w-10 after:h-10 after:bg-white after:flex after:justify-center after:items-center after:rounded-full w-full bg-backdrop">
                                                   <div class="flex flex-col">
-                                                       <h2 class="h-10 flex flex-row items-center text-xl text-white font-semibold">
+                                                       <h2 class="h-10 flex flex-row items-center text-sm largephone:text-lg text-white font-semibold">
                                                             Good Life Project
                                                        </h2>     
-                                                       <p class="text-sm text-white font-medium ">
+                                                       <p class="text-xs largephone:text-sm text-white font-medium ">
                                                            ELIZABETH GILBERT 
                                                        </p>
                                                   </div>
@@ -243,10 +259,10 @@
                                    <div class="flex flex-col bg-white p-6 rounded-2xl gap-12 fablet:gap-4">
                                         <div class="flex flex-wrap fablet:flex-nowrap justify-between items-center">
                                              <div class="flex flex-col w-full largephone:w-auto largephone:flex-row flex-wrap fablet:flex-nowrap items-center gap-6">
-                                                  <h2 class="h-10 flex flex-row items-center text-lg font-semibold">
+                                                  <h2 class="h-10 flex flex-row items-center text-lg largephone:text-xl text-center largephone:text-left font-semibold">
                                                        Trending podcast in
                                                   </h2>
-                                                  <p class="h-10 flex items-center text-lg font-medium after:font-fontawsome after:font-black after:content-arrowdown after:ml-8 bg-gray-100 px-4 rounded-xl text-gray-600 after:text-bgNav " >
+                                                  <p class="h-10 flex items-center text-sm largephone:text-lg font-medium after:font-fontawsome after:font-black after:content-arrowdown after:ml-8 bg-gray-100 px-4 rounded-xl text-gray-600 after:text-bgNav " >
                                                        Inspration
                                                   </p>
                                              </div>
@@ -264,7 +280,7 @@
                                                                  <div class="absolute top-2 right-2 flex items-center justify-center after:content-heart after:text-xl after:font-fontawsome after:font-medium after:text-bgNav w-8 h-8 bg-white rounded-full"></div>
                                                                  <div class="absolute bottom-2 right-2 flex items-center justify-center after:content-singleplay after:font-fontawsome after:font-black after:text-white w-8 h-8 bg-bgNav rounded-full"></div>
                                                             </div>
-                                                            <p class="mt-2 text-lg font-semibold">
+                                                            <p class="mt-2 text-bgNav text-base largephone:text-lg font-semibold">
                                                                  Earn your Happy
                                                             </p>
                                                             <div class="flex items-center justify-between mt-4">
@@ -277,30 +293,12 @@
                                                             </div>
                                                        </div>
                                                        <div class="flex flex-col swiper-slide">
-                                                            <div class="cover h-10r overflow-hidden rounded-2xl relative">
-                                                                 <img class="h-full w-full object-cover object-right " src="./podcastimg2.avif" alt="">
-                                                                 <div class="absolute top-2 right-2 flex items-center justify-center after:content-heart after:text-xl after:font-fontawsome after:font-medium after:text-bgNav w-8 h-8 bg-white rounded-full"></div>
-                                                                 <div class="absolute bottom-2 right-2 flex items-center justify-center after:content-singleplay after:font-fontawsome after:font-black after:text-white w-8 h-8 bg-bgNav rounded-full"></div>
-                                                            </div>
-                                                            <p class="mt-2 text-lg font-semibold">
-                                                                 The mind your Business
-                                                            </p>
-                                                            <div class="flex items-center justify-between mt-4">
-                                                                 <p class="text-sm font-semibold text-gray-600">
-                                                                      LOGAN POOOLMAN
-                                                                 </p>
-                                                                 <span class="text-sm font-black flex flex-row items-baseline gap-1 text-bgNav before:text-bgNav before:font-fontawsome before:content-clock before:font-black">
-                                                                      30:25 min
-                                                                 </span>
-                                                            </div>
-                                                       </div>
-                                                       <div class="flex flex-col swiper-slide">
-                                                            <div class="cover h-10r overflow-hidden rounded-2xl relative">
+                                                            <div class="cover max-h-10r overflow-hidden rounded-2xl relative">
                                                                  <img class="h-full w-full object-cover object-right " src="./podcastimg1.avif" alt="">
                                                                  <div class="absolute top-2 right-2 flex items-center justify-center after:content-heart after:text-xl after:font-fontawsome after:font-medium after:text-bgNav w-8 h-8 bg-white rounded-full"></div>
                                                                  <div class="absolute bottom-2 right-2 flex items-center justify-center after:content-singleplay after:font-fontawsome after:font-black after:text-white w-8 h-8 bg-bgNav rounded-full"></div>
                                                             </div>
-                                                            <p class="mt-2 text-lg font-semibold">
+                                                            <p class="mt-2 text-bgNav text-base largephone:text-lg font-semibold">
                                                                  Earn your Happy
                                                             </p>
                                                             <div class="flex items-center justify-between mt-4">
@@ -313,30 +311,12 @@
                                                             </div>
                                                        </div>
                                                        <div class="flex flex-col swiper-slide">
-                                                            <div class="cover h-10r overflow-hidden rounded-2xl relative">
-                                                                 <img class="h-full w-full object-cover object-right " src="./podcastimg2.avif" alt="">
-                                                                 <div class="absolute top-2 right-2 flex items-center justify-center after:content-heart after:text-xl after:font-fontawsome after:font-medium after:text-bgNav w-8 h-8 bg-white rounded-full"></div>
-                                                                 <div class="absolute bottom-2 right-2 flex items-center justify-center after:content-singleplay after:font-fontawsome after:font-black after:text-white w-8 h-8 bg-bgNav rounded-full"></div>
-                                                            </div>
-                                                            <p class="mt-2 text-lg font-semibold">
-                                                                 The mind your Business
-                                                            </p>
-                                                            <div class="flex items-center justify-between mt-4">
-                                                                 <p class="text-sm font-semibold text-gray-600">
-                                                                      LOGAN POOOLMAN
-                                                                 </p>
-                                                                 <span class="text-sm font-black flex flex-row items-baseline gap-1 text-bgNav before:text-bgNav before:font-fontawsome before:content-clock before:font-black">
-                                                                      30:25 min
-                                                                 </span>
-                                                            </div>
-                                                       </div>
-                                                       <div class="flex flex-col swiper-slide">
-                                                            <div class="cover h-10r overflow-hidden rounded-2xl relative">
+                                                            <div class="cover max-h-10r overflow-hidden rounded-2xl relative">
                                                                  <img class="h-full w-full object-cover object-right " src="./podcastimg1.avif" alt="">
                                                                  <div class="absolute top-2 right-2 flex items-center justify-center after:content-heart after:text-xl after:font-fontawsome after:font-medium after:text-bgNav w-8 h-8 bg-white rounded-full"></div>
                                                                  <div class="absolute bottom-2 right-2 flex items-center justify-center after:content-singleplay after:font-fontawsome after:font-black after:text-white w-8 h-8 bg-bgNav rounded-full"></div>
                                                             </div>
-                                                            <p class="mt-2 text-lg font-semibold">
+                                                            <p class="mt-2 text-bgNav text-base largephone:text-lg font-semibold">
                                                                  Earn your Happy
                                                             </p>
                                                             <div class="flex items-center justify-between mt-4">
@@ -349,20 +329,56 @@
                                                             </div>
                                                        </div>
                                                        <div class="flex flex-col swiper-slide">
-                                                            <div class="cover h-10r overflow-hidden rounded-2xl relative">
-                                                                 <img class="h-full w-full object-cover object-right " src="./podcastimg3.avif" alt="">
+                                                            <div class="cover max-h-10r overflow-hidden rounded-2xl relative">
+                                                                 <img class="h-full w-full object-cover object-right " src="./podcastimg1.avif" alt="">
                                                                  <div class="absolute top-2 right-2 flex items-center justify-center after:content-heart after:text-xl after:font-fontawsome after:font-medium after:text-bgNav w-8 h-8 bg-white rounded-full"></div>
                                                                  <div class="absolute bottom-2 right-2 flex items-center justify-center after:content-singleplay after:font-fontawsome after:font-black after:text-white w-8 h-8 bg-bgNav rounded-full"></div>
                                                             </div>
-                                                            <p class="mt-2 text-lg font-semibold">
-                                                                 The art of Charm
+                                                            <p class="mt-2 text-bgNav text-base largephone:text-lg font-semibold">
+                                                                 Earn your Happy
                                                             </p>
                                                             <div class="flex items-center justify-between mt-4">
                                                                  <p class="text-sm font-semibold text-gray-600">
-                                                                      JACKIE CHAN
+                                                                      LOHI HARDER
                                                                  </p>
                                                                  <span class="text-sm font-black flex flex-row items-baseline gap-1 text-bgNav before:text-bgNav before:font-fontawsome before:content-clock before:font-black">
-                                                                      59:20 min
+                                                                      1 hr 50 min
+                                                                 </span>
+                                                            </div>
+                                                       </div>
+                                                       <div class="flex flex-col swiper-slide">
+                                                            <div class="cover max-h-10r overflow-hidden rounded-2xl relative">
+                                                                 <img class="h-full w-full object-cover object-right " src="./podcastimg1.avif" alt="">
+                                                                 <div class="absolute top-2 right-2 flex items-center justify-center after:content-heart after:text-xl after:font-fontawsome after:font-medium after:text-bgNav w-8 h-8 bg-white rounded-full"></div>
+                                                                 <div class="absolute bottom-2 right-2 flex items-center justify-center after:content-singleplay after:font-fontawsome after:font-black after:text-white w-8 h-8 bg-bgNav rounded-full"></div>
+                                                            </div>
+                                                            <p class="mt-2 text-bgNav text-base largephone:text-lg font-semibold">
+                                                                 Earn your Happy
+                                                            </p>
+                                                            <div class="flex items-center justify-between mt-4">
+                                                                 <p class="text-sm font-semibold text-gray-600">
+                                                                      LOHI HARDER
+                                                                 </p>
+                                                                 <span class="text-sm font-black flex flex-row items-baseline gap-1 text-bgNav before:text-bgNav before:font-fontawsome before:content-clock before:font-black">
+                                                                      1 hr 50 min
+                                                                 </span>
+                                                            </div>
+                                                       </div>
+                                                       <div class="flex flex-col swiper-slide">
+                                                            <div class="cover max-h-10r overflow-hidden rounded-2xl relative">
+                                                                 <img class="h-full w-full object-cover object-right " src="./podcastimg1.avif" alt="">
+                                                                 <div class="absolute top-2 right-2 flex items-center justify-center after:content-heart after:text-xl after:font-fontawsome after:font-medium after:text-bgNav w-8 h-8 bg-white rounded-full"></div>
+                                                                 <div class="absolute bottom-2 right-2 flex items-center justify-center after:content-singleplay after:font-fontawsome after:font-black after:text-white w-8 h-8 bg-bgNav rounded-full"></div>
+                                                            </div>
+                                                            <p class="mt-2 text-bgNav text-base largephone:text-lg font-semibold">
+                                                                 Earn your Happy
+                                                            </p>
+                                                            <div class="flex items-center justify-between mt-4">
+                                                                 <p class="text-sm font-semibold text-gray-600">
+                                                                      LOHI HARDER
+                                                                 </p>
+                                                                 <span class="text-sm font-black flex flex-row items-baseline gap-1 text-bgNav before:text-bgNav before:font-fontawsome before:content-clock before:font-black">
+                                                                      1 hr 50 min
                                                                  </span>
                                                             </div>
                                                        </div>
@@ -374,7 +390,7 @@
                               <div class="grid minilaptop:grid-rows-2fr grid-rows-[auto auto] p-6 gap-8 bg-white rounded-2xl">
                                    <div class="flex flex-col gap-12">
                                         <div class="flex flex-col largephone:flex-row items-center justify-center largephone:justify-between">
-                                             <h2 class="h-10 flex flex-row items-center text-2xl font-semibold">
+                                             <h2 class="h-10 flex flex-row items-center text-center largephone:text-left text-lg largephone:text-2xl font-semibold">
                                                   Popular podcasts
                                              </h2>
                                              <div class="flex flex-row items-baseline gap-4 ">
@@ -409,14 +425,14 @@
                                                             <img class="w-14rem max-h-hplaylist rounded-[1.5rem] object-cover object-left" src="./podcastimg0.avif" alt="">
                                                             <div class="flex flex-col items-center fablet:items-start justify-between gap-4 py-2">
                                                                  <div class="flex flex-col gap-2">
-                                                                      <h2 class="text-lg font-semibold text-bgNav">
+                                                                      <h2 class="text-base largephone:text-lg font-semibold text-bgNav">
                                                                            How to face big decision
                                                                       </h2>
                                                                       <span class="text-sm font-semibold text-gray-500">
                                                                            TOM HEART
                                                                       </span>
                                                                  </div>
-                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-4xl before:text-bgNav">
+                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-2xl largephone:before:text-4xl before:text-bgNav">
                                                                       <span class="text-lg font-semibold text-gray-500">1 hr 20 min</span>
                                                                  </div>
                                                             </div>
@@ -425,14 +441,14 @@
                                                             <img class="w-14rem max-h-hplaylist rounded-[1.5rem] object-cover object-left" src="./podcastimg0.avif" alt="">
                                                             <div class="flex flex-col items-center fablet:items-start justify-between gap-4 py-2">
                                                                  <div class="flex flex-col gap-2">
-                                                                      <h2 class="text-lg font-semibold text-bgNav">
+                                                                      <h2 class="text-base largephone:text-lg font-semibold text-bgNav">
                                                                            How to face big decision
                                                                       </h2>
                                                                       <span class="text-sm font-semibold text-gray-500">
                                                                            TOM HEART
                                                                       </span>
                                                                  </div>
-                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-4xl before:text-bgNav">
+                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-2xl largephone:before:text-4xl before:text-bgNav">
                                                                       <span class="text-lg font-semibold text-gray-500">1 hr 20 min</span>
                                                                  </div>
                                                             </div>
@@ -441,14 +457,14 @@
                                                             <img class="w-14rem max-h-hplaylist rounded-[1.5rem] object-cover object-left" src="./podcastimg0.avif" alt="">
                                                             <div class="flex flex-col items-center fablet:items-start justify-between gap-4 py-2">
                                                                  <div class="flex flex-col gap-2">
-                                                                      <h2 class="text-lg font-semibold text-bgNav">
+                                                                      <h2 class="text-base largephone:text-lg font-semibold text-bgNav">
                                                                            How to face big decision
                                                                       </h2>
                                                                       <span class="text-sm font-semibold text-gray-500">
                                                                            TOM HEART
                                                                       </span>
                                                                  </div>
-                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-4xl before:text-bgNav">
+                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-2xl largephone:before:text-4xl before:text-bgNav">
                                                                       <span class="text-lg font-semibold text-gray-500">1 hr 20 min</span>
                                                                  </div>
                                                             </div>
@@ -457,14 +473,14 @@
                                                             <img class="w-14rem max-h-hplaylist rounded-[1.5rem] object-cover object-left" src="./podcastimg0.avif" alt="">
                                                             <div class="flex flex-col items-center fablet:items-start justify-between gap-4 py-2">
                                                                  <div class="flex flex-col gap-2">
-                                                                      <h2 class="text-lg font-semibold text-bgNav">
+                                                                      <h2 class="text-base largephone:text-lg font-semibold text-bgNav">
                                                                            How to face big decision
                                                                       </h2>
                                                                       <span class="text-sm font-semibold text-gray-500">
                                                                            TOM HEART
                                                                       </span>
                                                                  </div>
-                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-4xl before:text-bgNav">
+                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-2xl largephone:before:text-4xl before:text-bgNav">
                                                                       <span class="text-lg font-semibold text-gray-500">1 hr 20 min</span>
                                                                  </div>
                                                             </div>
@@ -473,14 +489,14 @@
                                                             <img class="w-14rem max-h-hplaylist rounded-[1.5rem] object-cover object-left" src="./podcastimg0.avif" alt="">
                                                             <div class="flex flex-col items-center fablet:items-start justify-between gap-4 py-2">
                                                                  <div class="flex flex-col gap-2">
-                                                                      <h2 class="text-lg font-semibold text-bgNav">
+                                                                      <h2 class="text-base largephone:text-lg font-semibold text-bgNav">
                                                                            How to face big decision
                                                                       </h2>
                                                                       <span class="text-sm font-semibold text-gray-500">
                                                                            TOM HEART
                                                                       </span>
                                                                  </div>
-                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-4xl before:text-bgNav">
+                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-2xl largephone:before:text-4xl before:text-bgNav">
                                                                       <span class="text-lg font-semibold text-gray-500">1 hr 20 min</span>
                                                                  </div>
                                                             </div>
@@ -489,14 +505,14 @@
                                                             <img class="w-14rem max-h-hplaylist rounded-[1.5rem] object-cover object-left" src="./podcastimg0.avif" alt="">
                                                             <div class="flex flex-col items-center fablet:items-start justify-between gap-4 py-2">
                                                                  <div class="flex flex-col gap-2">
-                                                                      <h2 class="text-lg font-semibold text-bgNav">
+                                                                      <h2 class="text-base largephone:text-lg font-semibold text-bgNav">
                                                                            How to face big decision
                                                                       </h2>
                                                                       <span class="text-sm font-semibold text-gray-500">
                                                                            TOM HEART
                                                                       </span>
                                                                  </div>
-                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-4xl before:text-bgNav">
+                                                                 <div class="flex flex-row items-center before:font-fontawsome before:font-black before:content-clock p-2 px-4 bg-gray-100 rounded-lg gap-4 before:font-fontawsome before:font-normal before:content-play before:text-2xl largephone:before:text-4xl before:text-bgNav">
                                                                       <span class="text-lg font-semibold text-gray-500">1 hr 20 min</span>
                                                                  </div>
                                                             </div>
@@ -508,28 +524,28 @@
                                    <hr class="border-b-2 border-solid ">
                                    <div class="grid grid-cols-1col laptop4:grid-cols-2auto h-full w-full gap-12 laptop4:gap-12r ">
                                         <div class="flex flex-col items-center fablet:items-start gap-6">                                        
-                                             <h2 class="flex flex-row items-center text-lg font-semibold">
+                                             <h2 class="flex text-center after:text-left flex-row items-center text-lg font-semibold">
                                                   Popular Catagoris
                                              </h2>                                             
                                              <div class="flex flex-col gap-4 fablet:gap-0 fablet:flex-row w-full justify-between h-full">
                                                   <div class="flex flex-col items-center gap-3">
                                                        <div class="after:font-fontawsome after:font-black after:w-iconsize after:h-iconsize after:flex after:items-center after:justify-center after:content-circlenod after:text-2xl p-4 bg-lightblue after:bg-white rounded-2xl after:rounded-xl after:text-bgNav"></div>
-                                                       <p class="text-lg font-bold text-bgNav">Education</p>
+                                                       <p class="text-base largephone:text-lg font-bold text-bgNav">Education</p>
                                                        <span class="text-gray-500 text-base font-semibold">190 Podcasts</span>
                                                   </div>
                                                   <div class="flex flex-col items-center gap-3">
-                                                       <div class="after:font-fontawsome after:font-black after:w-iconsize after:h-iconsize after:flex after:items-center after:justify-center after:content-headphone after:text-2xl p-4 bg-lightblue after:bg-white rounded-2xl after:rounded-xl after:text-bgNav"></div>
-                                                       <p class="text-lg font-bold text-bgNav">Education</p>
-                                                       <span class="text-gray-500 text-base font-semibold">10 Podcasts</span>
+                                                       <div class="after:font-fontawsome after:font-black after:w-iconsize after:h-iconsize after:flex after:items-center after:justify-center after:content-circlenod after:text-2xl p-4 bg-lightblue after:bg-white rounded-2xl after:rounded-xl after:text-bgNav"></div>
+                                                       <p class="text-base largephone:text-lg font-bold text-bgNav">Education</p>
+                                                       <span class="text-gray-500 text-base font-semibold">190 Podcasts</span>
                                                   </div>
                                                   <div class="flex laptop4:hidden laptop2:flex flex-col items-center gap-3">
-                                                       <div class="after:font-fontawsome after:font-black after:w-iconsize after:h-iconsize after:flex after:items-center after:justify-center after:content-book after:text-2xl p-4 bg-lightblue after:bg-white rounded-2xl after:rounded-xl after:text-bgNav"></div>
-                                                       <p class="text-lg font-bold text-bgNav">Education</p>
-                                                       <span class="text-gray-500 text-base font-semibold">569 Podcasts</span>
+                                                       <div class="after:font-fontawsome after:font-black after:w-iconsize after:h-iconsize after:flex after:items-center after:justify-center after:content-circlenod after:text-2xl p-4 bg-lightblue after:bg-white rounded-2xl after:rounded-xl after:text-bgNav"></div>
+                                                       <p class="text-base largephone:text-lg font-bold text-bgNav">Education</p>
+                                                       <span class="text-gray-500 text-base font-semibold">190 Podcasts</span>
                                                   </div>
                                                   <div class="hidden flex-col items-center gap-3 laptop:flex">
-                                                       <div class="after:font-fontawsome after:font-normal after:w-iconsize after:h-iconsize after:flex after:items-center after:justify-center after:content-smile after:text-2xl p-4 bg-lightblue after:bg-white rounded-2xl after:rounded-xl after:text-bgNav"></div>
-                                                       <p class="text-lg font-bold text-bgNav">Happinness</p>
+                                                       <div class="after:font-fontawsome after:font-black after:w-iconsize after:h-iconsize after:flex after:items-center after:justify-center after:content-circlenod after:text-2xl p-4 bg-lightblue after:bg-white rounded-2xl after:rounded-xl after:text-bgNav"></div>
+                                                       <p class="text-base largephone:text-lg font-bold text-bgNav">Progress</p>
                                                        <span class="text-gray-500 text-base font-semibold">190 Podcasts</span>
                                                   </div>
                                                   <button class="h-max text-white py-6 px-6 font-semibold rounded-2xl text-xl flex flex-col items-center border-none outline-none after:font-fontawsome after:font-black after:content-longright bg-bgNav ">
@@ -539,15 +555,15 @@
                                              </div>
                                         </div>
                                         <div class="flex flex-col items-center largephone:items-start gap-6">
-                                             <h2 class="flex flex-row items-center text-lg font-semibold">
+                                             <h2 class="flex flex-row text-center largephone:text-left items-center text-lg font-semibold">
                                                   Popular Podcasts
                                              </h2>
-                                             <div class="flex flex-col justify-between h-full">
+                                             <div class="flex flex-col justify-between h-full w-full">
                                                   <div class="flex flex-col gap-8 largephone:gap-4">
                                                        <div class="flex flex-col largephone:flex-row items-center justify-between p-4 bg-gray-100 rounded-3xl largephone:bg-transparent largephone:p-0">
                                                             <div class="detail flex flex-col largephone:flex-row items-center gap-6">
                                                                  <img class="h-imagelist rounded-full" src="./avt-2.jpg" alt="">
-                                                                 <p class="text-lg font-bold text-bgNav">
+                                                                 <p class="text-base largephone:text-lg font-bold text-bgNav">
                                                                       John Doe
                                                                  </p>
                                                             </div>
@@ -556,7 +572,7 @@
                                                        <div class="flex flex-col largephone:flex-row items-center justify-between p-4 bg-gray-100 rounded-3xl largephone:bg-transparent largephone:p-0">
                                                             <div class="detail flex flex-col largephone:flex-row items-center gap-6">
                                                                  <img class="h-imagelist rounded-full" src="./avt-2.jpg" alt="">
-                                                                 <p class="text-lg font-bold text-bgNav">
+                                                                 <p class="text-base largephone:text-lg font-bold text-bgNav">
                                                                       John Doe
                                                                  </p>
                                                             </div>
@@ -564,7 +580,7 @@
                                                        </div>
                                                   </div>
                                                   <button class="border-none outline-none flex items-center justify-center mt-4">
-                                                       <p class="text-lg text-bgNav font-semibold bg-lightblue gap-6 after:font-fontawsome after:font-black after:content-arrowdown flex items-center py-2 px-8 rounded-xl ">
+                                                       <p class="text-lg text-bgNav font-semibold bg-lightblue gap-0 phone:gap-6 after:font-fontawsome after:font-black after:content-arrowdown flex flex-col phone:flex-row items-center py-2 px-8 rounded-xl ">
                                                             View More
                                                        </p>
                                                   </button>
@@ -573,25 +589,25 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="grid grid-cols-1col tablet:grid-cols-1cols laptop3:grid-cols-1fr laptop3:grid-rows-ab2fr gap-12">
+                         <div class="grid grid-cols-1col tablet:flex tablet:justify-between laptop3:grid laptop3:grid-cols-1col gap-12">
                               <div class="flex flex-col items-center bg-white p-8 gap-2 rounded-2xl">
                                    <div class="flex items-center gap-6">
-                                        <h2 class="h-10 flex flex-row items-center text-lg text-bgNav font-semibold">
+                                        <h2 class="h-10 flex flex-row items-center text-center largephone:text-left text-base largephone:text-lg text-bgNav font-semibold">
                                              Now Playing
                                         </h2>
                                    </div>
                                    <img src="./podcastimg3.avif" class="h-hplaylist w-wplaylist object-cover rounded-[2rem]" alt="" srcset="">
-                                   <p class="h-10 flex flex-row items-center text-lg text-bgNav font-semibold">
+                                   <p class="h-10 flex flex-row items-center text-center largephone:text-left text-base largephone:text-lg text-bgNav font-semibold">
                                         Spritual Awaking
                                    </p>
-                                   <span class="text-gray-500 text-base font-semibold">
+                                   <span class="text-center text-gray-500 text-base font-semibold">
                                         DR. Erin Fall Haskell
                                    </span>
                                    <div class="w-full flex flex-col items-center mt-4">
                                         <input min="0" max="100" value="40" class="w-full range m-0 p-0" type="range" name="" id="">
                                         <div class="flex flex-row w-full items-center justify-between">
-                                             <p class="text-bgNav font-semibold text-lg" >17:46</p>
-                                             <p class="text-bgNav font-semibold text-lg" >30:35</p>
+                                             <p class="text-bgNav font-semibold text-base largephone:text-lg" >17:46</p>
+                                             <p class="text-bgNav font-semibold text-base largephone:text-lg" >30:35</p>
                                         </div>
                                    </div>
                                    <div class="flex items-center justify-center gap-6">
@@ -600,12 +616,12 @@
                                         <div class="after:font-fontawsome after:font-black after:content-caretright w-2rem h-2rem p-2 flex items-center justify-center bg-gray-200 text-bgNav rounded-full after:text-2xl"></div>
                                    </div>
                               </div>
-                              <div class="flex flex-col bg-white p-8 pb-6 gap-2 rounded-2xl justify-between">
-                                   <div class="w-full flex flex-col items-stretch argephone:flex-row largephone:items-center justify-evenly laptop:justify-between g-gray-100 rounded-xl">
-                                        <p class="text-center py-2 px-4 text-lg font-semibold text-gray-500 rounded-xl w-auto laptop3:w-50% laptop:w-auto">
+                              <div class="flex flex-col bg-white p-8 pb-6 gap-4 rounded-2xl justify-between">
+                                   <div class="gap-4 phone:gap-0 w-full flex flex-col items-stretch largephone:flex-row largephone:items-center justify-evenly laptop:justify-between g-gray-100 rounded-xl">
+                                        <p class="cursor-pointer text-center py-2 px-4 text-base largephone:text-lg font-semibold text-gray-500 rounded-xl w-auto laptop3:w-50% laptop:w-auto catbut">
                                              Recently Played
                                         </p>
-                                        <p class="text-center py-2 px-4 text-lg font-semibold text-white bg-bgNav rounded-xl w-auto laptop3:w-50% laptop:w-auto">
+                                        <p class="cursor-pointer text-center py-2 px-4 text-base largephone:text-lg font-semibold text-white bg-bgNav rounded-xl w-auto laptop3:w-50% laptop:w-auto catbut">
                                              My Favorite
                                         </p>
                                    </div>
@@ -614,10 +630,10 @@
                                              <div class="w-wimagelist h-imagelist overflow-hidden rounded-2xl ">
                                                   <img class="h-full w-full object-cover object-right" src="./podcastimg3.avif" alt="">
                                              </div>
-                                             <div class="flex items-center largephone:items-start flex-col w-full">
-                                                  <p class="w-14rem whitespace-nowrap overflow-hidden text-ellipsis text-lg font-semibold text-bgNav">Go Where the knowledement is not oh yes</p>
+                                             <div class="flex items-center largephone:items-start flex-col w-full gap-4 phone:gap-0">
+                                                  <p class="max-w-[5rem] phone:w-14rem whitespace-nowrap overflow-hidden text-ellipsis text-base largephone:text-lg font-semibold text-bgNav">Go Where the knowledement is not oh yes</p>
                                                   <div class="flex flex-col largephone:flex-row items-center justify-between gap-6 w-full">
-                                                       <p class="text-gray-500 text-base font-semibold">
+                                                       <p class="text-center phone:text-lefttext-gray-500 text-sm largephone:text-base font-semibold">
                                                             JOHNS, SHAWN
                                                        </p>
                                                        <span class="text-gray-500 text-base font-semibold">26 min</span>
@@ -630,10 +646,10 @@
                                              <div class="w-wimagelist h-imagelist overflow-hidden rounded-2xl ">
                                                   <img class="h-full w-full object-cover object-right" src="./podcastimg3.avif" alt="">
                                              </div>
-                                             <div class="flex items-center largephone:items-start flex-col w-full">
-                                                  <p class="w-14rem whitespace-nowrap overflow-hidden text-ellipsis text-lg font-semibold text-bgNav">Go Where the knowledement is not oh yes</p>
+                                             <div class="flex items-center largephone:items-start flex-col w-full gap-4 phone:gap-0">
+                                                  <p class="max-w-[5rem] phone:w-14rem whitespace-nowrap overflow-hidden text-ellipsis text-base largephone:text-lg font-semibold text-bgNav">Go Where the knowledement is not oh yes</p>
                                                   <div class="flex flex-col largephone:flex-row items-center justify-between gap-6 w-full">
-                                                       <p class="text-gray-500 text-base font-semibold">
+                                                       <p class="text-center phone:text-lefttext-gray-500 text-sm largephone:text-base font-semibold">
                                                             JOHNS, SHAWN
                                                        </p>
                                                        <span class="text-gray-500 text-base font-semibold">26 min</span>
@@ -646,10 +662,10 @@
                                              <div class="w-wimagelist h-imagelist overflow-hidden rounded-2xl ">
                                                   <img class="h-full w-full object-cover object-right" src="./podcastimg3.avif" alt="">
                                              </div>
-                                             <div class="flex items-center largephone:items-start flex-col w-full">
-                                                  <p class="w-14rem whitespace-nowrap overflow-hidden text-ellipsis text-lg font-semibold text-bgNav">Go Where the knowledement is not oh yes</p>
+                                             <div class="flex items-center largephone:items-start flex-col w-full gap-4 phone:gap-0">
+                                                  <p class="max-w-[5rem] phone:w-14rem whitespace-nowrap overflow-hidden text-ellipsis text-base largephone:text-lg font-semibold text-bgNav">Go Where the knowledement is not oh yes</p>
                                                   <div class="flex flex-col largephone:flex-row items-center justify-between gap-6 w-full">
-                                                       <p class="text-gray-500 text-base font-semibold">
+                                                       <p class="text-center phone:text-lefttext-gray-500 text-sm largephone:text-base font-semibold">
                                                             JOHNS, SHAWN
                                                        </p>
                                                        <span class="text-gray-500 text-base font-semibold">26 min</span>
@@ -662,10 +678,10 @@
                                              <div class="w-wimagelist h-imagelist overflow-hidden rounded-2xl ">
                                                   <img class="h-full w-full object-cover object-right" src="./podcastimg3.avif" alt="">
                                              </div>
-                                             <div class="flex items-center largephone:items-start flex-col w-full">
-                                                  <p class="w-14rem whitespace-nowrap overflow-hidden text-ellipsis text-lg font-semibold text-bgNav">Go Where the knowledement is not oh yes</p>
+                                             <div class="flex items-center largephone:items-start flex-col w-full gap-4 phone:gap-0">
+                                                  <p class="max-w-[5rem] phone:w-14rem whitespace-nowrap overflow-hidden text-ellipsis text-base largephone:text-lg font-semibold text-bgNav">Go Where the knowledement is not oh yes</p>
                                                   <div class="flex flex-col largephone:flex-row items-center justify-between gap-6 w-full">
-                                                       <p class="text-gray-500 text-base font-semibold">
+                                                       <p class="text-center phone:text-lefttext-gray-500 text-sm largephone:text-base font-semibold">
                                                             JOHNS, SHAWN
                                                        </p>
                                                        <span class="text-gray-500 text-base font-semibold">26 min</span>
@@ -674,7 +690,7 @@
                                         </div>
                                    </div>
                                    <button class="border-none outline-none flex items-center justify-center mt-4">
-                                        <p class="text-lg text-bgNav font-semibold bg-lightblue gap-6 after:font-fontawsome after:font-black after:content-arrowdown flex items-center py-2 px-8 rounded-xl ">
+                                        <p class="text-lg text-bgNav font-semibold bg-lightblue gap-0 phone:gap-6 after:font-fontawsome after:font-black after:content-arrowdown flex flex-col phone:flex-row items-center py-2 px-8 rounded-xl ">
                                              View More
                                         </p>
                                    </button>
